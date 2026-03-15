@@ -1,99 +1,165 @@
 <!DOCTYPE html>
 <html lang="vi">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Chiến Binh Rồng Thiêng</title>
-  <link rel="stylesheet" href="../css/style.css" />
-  <link rel="icon" href="../images/icongame1.png" type="image/png" />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Ninja School Online</title>
+    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="icon" href="../images/icongame1.png" type="image/png" />
 </head>
 <body>
-  <div class="header">
+<div class="header">
     <div style="overflow: hidden;">
-      <video autoplay muted loop playsinline preload="metadata"poster="../images/gioithieu2.webp" class="header-video" style="animation: vid1 10s infinite;height:120%;filter: brightness(0.9)">
-        <source src="../images/gioithieu2.webm" type="video/webm">
-        <source src="../images/gioithieu2.mp4" type="video/mp4">
-      </video>
-      <video autoplay muted loop playsinline preload="metadata" poster="../images/gioithieu.webp" class="header-video" style="animation: vid2 10s infinite;filter: brightness(0.9)">
-        <source src="../images/gioithieu.webm" type="video/webm">
-        <source src="../images/gioithieu.mp4" type="video/mp4">
-      </video>
+        <video autoplay muted loop playsinline preload="metadata" poster="../images/gioithieu2.webp" class="header-video" style="animation: vid1 10s infinite;height:120%;filter: brightness(0.9)">
+            <source src="../images/gioithieu2.webm" type="video/webm">
+            <source src="../images/gioithieu2.mp4" type="video/mp4">
+        </video>
+        <video autoplay muted loop playsinline preload="metadata" poster="../images/gioithieu.webp" class="header-video" style="animation: vid2 10s infinite;filter: brightness(0.9)">
+            <source src="../images/gioithieu.webm" type="video/webm">
+            <source src="../images/gioithieu.mp4" type="video/mp4">
+        </video>
     </div>
     <div class="overlay"></div>
-        <div class="header-content" >
-            <h1>Tổng Quan Game</h1>
-            <div>
-              <ul>
+
+    <div class="header-content">
+        <h1>Tổng Quan Game</h1>
+
+        <div>
+            <ul>
                 <li><a href="../index.html">Trang chủ</a></li>
-                <li><a href="gioithieu.html"id="selected">Giới thiệu</a></li>
+                <li><a href="gioithieu.html" id="selected">Giới thiệu</a></li>
                 <li><a href="nhanvat.html">Nhân Vật</a></li>
                 <li><a href="diendan.html">Diễn đàn</a></li>
-                <li><a href="https://www.facebook.com/people/Chi%E1%BA%BFn-Binh-R%E1%BB%93ng-Thi%C3%AAng/61576541835732/" target="_blank">Fanpage</a></li>
+                <li><a href="#">Fanpage</a></li>
                 <li><a href="tintuc.html">Tin tức</a></li>
                 <li><a href="huongdanchoi.html">Hướng dẫn chơi</a></li>
                 <li><a href="choingay.html">Chơi ngay</a></li>
                 <li><a href="naptien.html">Nạp game</a></li>
-                <li><a href="shop.html">Shop rồng thiêng</a></li>
+                <li><a href="shop.html">Shop ninja</a></li>
                 <li><a href="chatbot.html">Chat bot hỗ trợ</a></li>
                 <li><a href="profile.html">Profile</a></li>
-                <li><a href="vinhdanh.html">Vinh danh chiến binh</a></li>
-              </ul>
-            </div>
+                <li><a href="vinhdanh.html">Vinh danh ninja</a></li>
+            </ul>
         </div>
+    </div>
+</div>
+
+<div class="bg-content1">
+    <div style="float:right;margin-top:5px">
+        <label class="switch">
+            <input type="checkbox" id="darkModeToggle">
+            <span class="slider round"></span>
+        </label>
     </div>
 
-    <div class="bg-content1">
-        <div style="float:right;margin-top:5px">
-            <label class="switch">
-                <input type="checkbox" id="darkModeToggle">
-                <span class="slider round"></span>
-            </label>
-        </div>
-        <h2>Giới Thiệu Game</h2>
-        <p><strong>Chiến Binh Rồng Thiêng</strong> là một tựa game đối kháng hành động 2 người chơi, được xây dựng hoàn toàn bằng Python và thư viện Pygame. Đây là một dự án game độc lập với hệ thống kỹ năng và biến hình sâu sắc, mô phỏng lại những trận chiến nảy lửa giữa các chiến binh huyền thoại trong vũ trụ Dragon Ball. <br> Người chơi có thể lựa chọn 1 trong 5 nhân vật: Goku, Vegeta, Piccolo, Broly, hoặc Gohan, mỗi nhân vật đều sở hữu bộ kỹ năng riêng, từ khả năng phòng thủ, stun đối thủ, tăng sát thương, hồi máu đến những chiêu cuối mang tính "kết liễu". Game hỗ trợ cả chế độ PvP 2 người trên cùng máy và chế độ PvE với AI. <br>Hệ thống gameplay được thiết kế tỉ mỉ: mỗi nhân vật có thanh HP, thanh KI (năng lượng), kỹ năng thường (Skill 1, 2, 3, 4), chiêu cuối (Ultimate), và hai trạng thái biến hình đặc biệt – biến hình cấp T (nâng cao năng lực) và cấp O (hình thái tối thượng). Một số kỹ năng phụ thuộc vào tình trạng HP (như Gohan có thể hóa Max Beast nếu HP dưới 40%). Cơ chế dash, combo, phòng thủ, thời gian hồi chiêu và hiệu ứng đòn đánh đều được lập trình chi tiết, tạo nên một trải nghiệm đối kháng chiến thuật nhưng vẫn đậm chất hành động.</p>
-    </div>
-    <div class="bg-content1">
-        <h2>Tác giả, nhóm phát triển</h2>
-        <p><strong>Chiến Binh Rồng Thiêng </strong>là sản phẩm cá nhân của <strong>Phạm Hải Đăng</strong>, sinh viên ngành Công nghệ Thông tin tại Học viện Công nghệ Bưu chính Viễn thông (PTIT). Là thành quả của toàn bộ quá trình thiết kế và lập trình game – từ xây dựng nhân vật, cơ chế kỹ năng, điều khiển AI cho đến giao diện người dùng. <br>Dự án bắt đầu như một bài tập lớn, nhưng sau đó được mở rộng thành một game hoàn chỉnh với nhiều tính năng nâng cao. Với nền tảng là kiến thức Python và niềm yêu thích Dragon Ball, tác giả đã từng bước phát triển game từ cơ bản đến nâng cao, đồng thời tối ưu để chạy được trên nền tảng web. <br>Mặc dù không có đội nhóm hỗ trợ, dự án vẫn được hoàn thiện bài bản, cho thấy khả năng thiết kế hệ thống, tư duy thuật toán và kỹ năng làm game 2D độc lập của sinh viên. Đây cũng là một ví dụ thực tế về việc áp dụng lập trình để tạo ra sản phẩm giải trí tương tác có chất lượng.</p>
-    </div>
-    <div class="bg-content1">
-        <h2>Nguồn cảm hứng</h2>
-        <p>Nguồn cảm hứng chính của <strong>Chiến Binh Rồng Thiêng</strong> đến từ tuổi thơ gắn liền với bộ manga/anime huyền thoại Dragon Ball. Từ những lần xem Songoku chiến đấu với Frieza, đến khoảnh khắc Vegeta hy sinh vì Trái Đất, hay cảnh Piccolo bảo vệ Gohan – tất cả đều để lại dấu ấn sâu đậm trong lòng tác giả.<br>Thay vì chỉ là một tựa game đối kháng đơn thuần, tác giả mong muốn truyền tải lại cái "chất" Dragon Ball thông qua những cơ chế chiến đấu táo bạo, mỗi kỹ năng trong game không chỉ để gây sát thương – mà được xây dựng để giống với tinh thần gốc của nhân vật đó: <br> - Kaioken của <strong>goku</strong> sẽ tăng sát thương nhưng tiêu hao máu – đúng tinh thần hy sinh để vượt ngưỡng. <br>- <strong>Vegeta</strong> có thể bất tử 1 khoảng thời gian trước khi hy sinh - đó là vì anh luôn đặt niềm kiêu hãnh và tinh thần bất khuất của người saiyan lên hàng đầu<br>- <strong>Piccolo</strong> có thể triệu hồi phân thân, hồi máu, tạo khiên – vì anh luôn là người che chắn và hỗ trợ đồng đội. <br>- <strong>Broly</strong> bộc phát sức mạnh khi bị thương, càng bị đánh càng mạnh – y như con quái vật đang giận dữ không thể kiểm soát. <br>- <strong>Gohan</strong> biến hình dựa vào % HP - đại diện cho sự trưởng thành với sức mạnh tiềm ẩn trong nghịch cảnh. <br> – Tất cả như tái hiện lại bản chất của từng nhân vật gốc. Game không chỉ để chơi mà còn để cảm nhận sức mạnh, chiến lược và tinh thần chiến binh đúng nghĩa.</p>
-    </div>
-    <div class="bg-content1">
-        <h2>Một vài tính năng nổi bật</h2>
-        <p>Có thể liệt kê một số tính năng nổi bật như sau:</p>
-        <p>🎮 <strong>5 nhân vật với bộ kỹ năng riêng biệt</strong>: Goku, Vegeta, Piccolo, Broly, Gohan — mỗi người có 7 kỹ năng, bao gồm kỹ năng thường, buff, stun, hồi máu, ultimate và biến hình nâng cấp.</p>
-        <p>🔥 <strong>Biến hình cấp T và O</strong>: Mỗi nhân vật có thể biến hình cấp T (bằng phím T) để tăng khả năng chiến đấu, và cấp O (bằng phím O) để đạt hình thái tối thượng – ví dụ Goku hóa Ultra Instinct, Broly hóa SSJ4, Gohan hóa Beast/Max Beast.</p>
-        <p>🤖 <strong>Chế độ AI thông minh</strong>: Hệ thống AI phản ứng theo trạng thái trận đấu, có thể né Ultimate, dash tránh đòn, tự heal khi máu yếu, thậm chí ra chiêu và biến hình đúng lúc.</p>
-        <p>🌀 <strong>Ultimate đa hiệu ứng</strong>: Chiêu cuối mỗi nhân vật không chỉ gây sát thương lớn mà còn có hiệu ứng riêng — làm choáng, làm chậm, giảm giáp, hoặc kết liễu nếu điều kiện đúng.</p>
-        <p>👯‍♂️ <strong>Clone Piccolo</strong>: Khi biến hình Orange, Piccolo tạo ra 2 phân thân biết bắn đạn tự động, gây sát thương độc lập.</p>
-        <p>⚡ <strong>Cơ chế cooldown linh hoạt</strong>: Một số trạng thái như SSJ1 của Gohan sẽ rút ngắn thời gian hồi chiêu giúp nhịp game nhanh và chiến thuật hơn.</p>
-    </div>
-    <div class="bg-content1">
-        <h2>Lộ trình phát triển</h2>
-        <p><strong>- Giai đoạn 1</strong> – Hoàn thiện core gameplay (hoàn thành): Thiết kế nhân vật, xây dựng bộ kỹ năng, kiểm thử gameplay PvP.</p>
-        <p><strong>- Giai đoạn 2</strong> – Thêm AI và hệ thống biến hình (đã hoàn thành): Xây dựng AI điều khiển nhân vật đối kháng hợp lý, thêm hệ thống biến hình T và O với logic chi tiết.</p>
-        <p><strong>- Giai đoạn 3</strong> – Cân bằng nhân vật và hiệu ứng kỹ năng (đã hoàn thành): Điều chỉnh sức mạnh nhân vật, thêm các hiệu ứng stun, heal, phản dame, và cơ chế phụ như "gồng KI".</p>
-        <p><strong>- Giai đoạn 4</strong> – Phát hành bản web (hoàn thành): Build và tối ưu hóa bằng Pygbag, đưa lên trang web để dễ dàng chia sẻ và trải nghiệm</p>
-        <p><strong>- Giai đoạn 5</strong> – Tương lai: Dự kiến bổ sung thêm nhân vật mới như Trunks, Frieza, Cell; cải tiến AI; thêm chế độ chơi Survival hoặc Tournament; và xây dựng hệ thống lưu điểm/sự kiện ingame.</p>
-    </div>
-    <div class="bg-content1">
-        <h2>Phiên bản hiện tại</h2>
-        <p><strong>Game đã trải qua 4 lần cập nhật lớn:</strong></p>
-        <p><strong>Phiên bản 1.0</strong>: Cơ bản với 2 nhân vật Goku và Vegeta, gameplay PvP đơn giản.</p>
-        <p><strong>Phiên bản 2.0</strong>: Bổ sung Piccolo với khả năng hồi máu và phân thân. Giao diện chọn nhân vật cải tiến.</p>
-        <p><strong>Phiên bản 3.0</strong>: Thêm Broly với cơ chế Berserker và biến hình SSJ4 cực mạnh, đồng thời xây dựng hệ thống AI có thể dash, tránh Ultimate.</p>
-        <p><strong>Phiên bản 4.0 (hiện tại)</strong>: Thêm Gohan với 4 trạng thái biến hình linh hoạt, Ultimate đa dạng hiệu ứng. Đồng thời build thành công bản web, cải tiến giao diện hướng dẫn và hiển thị kỹ năng nhân vật.</p>
-    </div>
-    <audio id="bg-music" autoplay loop>
-        <source src="../sounds/op1.mp3" type="audio/mpeg">
-    </audio>
-    <button id="toggle-music" class="music-toggle-btn">🔇</button>
-    <footer>
-        <p style="font-style: italic;"><strong>© 2025 Chiến Binh Rồng Thiêng | Phạm Hải Đăng</strong></p>
-    </footer>
-    <script src="../js/darkmode.js"></script>
-    <script src="../js/phatnhac.js"></script>
+    <h2>Giới Thiệu Game</h2>
+
+    <p>
+        <strong>Ninja School Online</strong> là tựa game nhập vai hành động 2D lấy chủ đề thế giới ninja đầy bí ẩn.
+        Người chơi sẽ hóa thân thành một ninja trẻ tuổi, tham gia huấn luyện tại học viện ninja, thực hiện nhiệm vụ,
+        chiến đấu với quái vật và đối đầu với các ninja khác để trở thành huyền thoại.
+        <br><br>
+        Trong game, người chơi có thể lựa chọn nhiều hệ phái khác nhau như ninja sử dụng kiếm, phi tiêu, nhẫn thuật hoặc vũ khí tầm xa.
+        Mỗi hệ phái đều có bộ kỹ năng riêng với cách chơi khác nhau. Người chơi cần nâng cấp nhân vật, học kỹ năng mới,
+        trang bị vũ khí mạnh hơn và phối hợp chiến thuật để vượt qua những thử thách ngày càng khó.
+        <br><br>
+        Gameplay của Ninja School Online tập trung vào việc làm nhiệm vụ, săn boss, tham gia chiến trường PvP
+        và khám phá thế giới rộng lớn. Hệ thống kỹ năng, trang bị và nâng cấp nhân vật giúp game luôn có chiều sâu
+        và tạo động lực phát triển lâu dài cho người chơi.
+    </p>
+</div>
+
+<div class="bg-content1">
+    <h2>Tác giả, nhóm phát triển</h2>
+
+    <p>
+        Trang web này được xây dựng như một dự án học tập và giới thiệu về tựa game <strong>Ninja School Online</strong>.
+        Nội dung bao gồm thông tin về gameplay, nhân vật, hướng dẫn chơi và các hoạt động cộng đồng dành cho người chơi yêu thích trò chơi này.
+        <br><br>
+        Dự án được phát triển bởi <strong>Phạm Hải Đăng</strong>, sinh viên ngành Công nghệ Thông tin tại
+        Học viện Công nghệ Bưu chính Viễn thông (PTIT). Trang web được xây dựng bằng HTML, CSS và JavaScript
+        nhằm tạo ra một không gian giới thiệu và thảo luận về game theo phong cách cộng đồng game thủ.
+        <br><br>
+        Mục tiêu của dự án là giúp người chơi mới hiểu rõ hơn về cơ chế game, đồng thời tạo nơi để chia sẻ kinh nghiệm,
+        chiến thuật và các mẹo chơi hiệu quả.
+    </p>
+</div>
+
+<div class="bg-content1">
+    <h2>Nguồn cảm hứng</h2>
+
+    <p>
+        Nguồn cảm hứng của dự án đến từ những tựa game ninja kinh điển từng gắn liền với tuổi thơ của nhiều game thủ Việt Nam.
+        Thế giới ninja với những cuộc chiến bí ẩn, kỹ năng nhẫn thuật mạnh mẽ và hành trình trưởng thành của các ninja trẻ
+        đã tạo nên sức hút đặc biệt cho dòng game này.
+        <br><br>
+        Trong Ninja School Online, người chơi không chỉ chiến đấu mà còn trải nghiệm hành trình trở thành ninja thực thụ:
+        từ việc học kỹ năng, hoàn thành nhiệm vụ cho đến tham gia các trận chiến khốc liệt với boss và người chơi khác.
+        <br><br>
+        Mỗi nhân vật đều mang phong cách chiến đấu riêng, tạo nên sự đa dạng chiến thuật và trải nghiệm khác nhau trong game.
+    </p>
+</div>
+
+<div class="bg-content1">
+    <h2>Một vài tính năng nổi bật</h2>
+
+    <p>🎮 <strong>Nhiều hệ phái ninja</strong>: Người chơi có thể lựa chọn các phong cách chiến đấu khác nhau như kiếm, phi tiêu, nhẫn thuật hoặc vũ khí tầm xa.</p>
+
+    <p>⚔️ <strong>Hệ thống nhiệm vụ phong phú</strong>: Từ nhiệm vụ huấn luyện cơ bản đến các nhiệm vụ khó với boss mạnh.</p>
+
+    <p>🔥 <strong>Chiến đấu PvP hấp dẫn</strong>: Người chơi có thể thách đấu và so tài kỹ năng với các ninja khác.</p>
+
+    <p>🧙 <strong>Kỹ năng nhẫn thuật đa dạng</strong>: Mỗi nhân vật có bộ kỹ năng riêng với nhiều hiệu ứng đặc biệt.</p>
+
+    <p>🌍 <strong>Thế giới rộng lớn</strong>: Nhiều khu vực bản đồ để khám phá, săn quái và tìm trang bị hiếm.</p>
+
+    <p>🤝 <strong>Cộng đồng đông đảo</strong>: Người chơi có thể kết bạn, lập nhóm và cùng nhau tham gia các hoạt động trong game.</p>
+</div>
+
+<div class="bg-content1">
+    <h2>Lộ trình phát triển</h2>
+
+    <p><strong>Giai đoạn 1</strong> – Xây dựng giao diện website và các trang giới thiệu cơ bản.</p>
+
+    <p><strong>Giai đoạn 2</strong> – Hoàn thiện hệ thống nội dung: nhân vật, hướng dẫn chơi và diễn đàn thảo luận.</p>
+
+    <p><strong>Giai đoạn 3</strong> – Bổ sung các trang tin tức, sự kiện và hoạt động cộng đồng.</p>
+
+    <p><strong>Giai đoạn 4</strong> – Tối ưu giao diện web, thêm chế độ Dark Mode và các hiệu ứng tương tác.</p>
+
+    <p><strong>Giai đoạn 5</strong> – Phát triển thêm các tính năng cộng đồng và cập nhật nội dung mới trong tương lai.</p>
+</div>
+
+<div class="bg-content1">
+    <h2>Phiên bản hiện tại</h2>
+
+    <p>
+        Website hiện đang ở phiên bản đầu tiên với các chức năng cơ bản:
+    </p>
+
+    <p>• Trang giới thiệu game.</p>
+    <p>• Trang nhân vật.</p>
+    <p>• Diễn đàn thảo luận.</p>
+    <p>• Hướng dẫn chơi cho người mới.</p>
+    <p>• Các trang tin tức và sự kiện.</p>
+
+    <p>
+        Trong các phiên bản tiếp theo, website sẽ tiếp tục được mở rộng nội dung và cải thiện trải nghiệm người dùng.
+    </p>
+</div>
+
+<audio id="bg-music" autoplay loop>
+    <source src="../sounds/op1.mp3" type="audio/mpeg">
+</audio>
+
+<button id="toggle-music" class="music-toggle-btn">🔇</button>
+
+<footer>
+    <p style="font-style: italic;"><strong>© 2025 Ninja School Online Fanpage</strong></p>
+</footer>
+
+<script src="../js/darkmode.js"></script>
+<script src="../js/phatnhac.js"></script>
+
 </body>
 </html>
