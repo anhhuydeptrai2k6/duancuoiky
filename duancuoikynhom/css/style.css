@@ -28,7 +28,7 @@ body {
   z-index: 1;
 }
 
-.header-video {
+.header-img {
     position: absolute;
     top: 0;
     left: 0;
@@ -36,11 +36,11 @@ body {
     height: 150%;
     object-fit: cover;
 }
-@keyframes vid1{
+@keyframes aanh1{
     0%,40%{opacity: 1;}
     43%,100%{opacity: 0;}
 }
-@keyframes vid2{
+@keyframes aanh2{
     0%,40%{opacity: 0;}
     43%,100%{opacity: 1;}
 }
@@ -201,15 +201,7 @@ footer {
   35%,66%{opacity:0;}
   68%,100%{opacity:1;}
 }
-/* 2 anh */
-@keyframes aanh1{
-      0%,50%{opacity: 1;}
-      53%,100%{opacity: 0;}
-    }
-@keyframes aanh2{
-  0%,50%{opacity: 0;}
-  53%,100%{opacity: 1;}
-}
+
 /* Toggle switch */
 .switch {
   position: relative;
