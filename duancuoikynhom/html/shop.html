@@ -1,0 +1,239 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chiến Binh Rồng Thiêng</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" href="../images/icongame1.png" type="image/png" />
+  <link rel="stylesheet" href="../css/shop.css">
+  <link rel="stylesheet" href="../css/toast.css">
+</head>
+<body>
+  <div class="header">
+    <div style="overflow: hidden;">
+      <video autoplay muted loop playsinline preload="metadata" poster="../images/huongdanchoi2.webp" class="header-video" style="animation: vid1 10s infinite;height:120%;filter: brightness(0.9)">
+        <source src="../images/huongdanchoi2.webm" type="video/webm">
+        <source src="../images/huongdanchoi2.mp4" type="video/mp4">
+      </video>
+      <video autoplay muted loop playsinline preload="metadata" poster="../images/nhanvat1.webp" class="header-video" style="animation: vid2 10s infinite;filter: brightness(0.9)">
+        <source src="../images/nhanvat1.webm" type="video/webm">
+        <source src="../images/nhanvat1.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="overlay"></div>
+        <div class="header-content" >
+            <h1>Kho Đồ Huyền Thoại Đang Mở Bán!</h1>
+            <div>
+                <ul>
+                <li><a href="../index.html">Trang chủ</a></li>
+                <li><a href="gioithieu.html">Giới thiệu</a></li>
+                <li><a href="nhanvat.html">Nhân Vật</a></li>
+                <li><a href="diendan.html">Diễn đàn</a></li>
+                <li><a href="https://www.facebook.com/people/Chi%E1%BA%BFn-Binh-R%E1%BB%93ng-Thi%C3%AAng/61576541835732/" target="_blank">Fanpage</a></li>
+                <li><a href="tintuc.html">Tin tức</a></li>
+                <li><a href="huongdanchoi.html">Hướng dẫn chơi</a></li>
+                <li><a href="choingay.html">Chơi ngay</a></li>
+                <li><a href="naptien.html">Nạp game</a></li>
+                <li><a href="shop.html" id="selected">Shop rồng thiêng</a></li>
+                <li><a href="chatbot.html">Chat bot hỗ trợ</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="vinhdanh.html">Vinh danh chiến binh</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-content1">
+        <div style="float:right;margin-top:5px">
+            <label class="switch">
+                <input type="checkbox" id="darkModeToggle">
+                <span class="slider round"></span>
+            </label>
+        </div>
+        <h2 style="text-align: center;">Trang bị mạnh nhất chỉ dành cho chiến binh dũng cảm!</h2>
+        <p><i><b>Khám phá kho báu vật phẩm độc quyền – mỗi lựa chọn sẽ mở ra một khả năng mới trong cuộc chiến bảo vệ vũ trụ! Bạn đã sẵn sàng trở thành truyền thuyết?</b></i></p>
+    </div>
+    <div class="bg-content1">
+      <h2>Xin chào chiến binh: <span id="ten-user"></span></h2>
+      <p>Số Zeni hiện tại: <span id="zeni-hientai">0</span></p>
+      <div class="download-buttons" style="display:flex;justify-content: space-between;align-items: center;margin-top: -12px;">
+          <p style="margin: 0;"class="vip">Cấp bậc chiến binh: <strong id="cap-bac"><span>VIP 0</span></strong></p>
+          <button id="nut-dang-nhap" style="padding:5px 8px;margin-top: 0px;"></button>
+      </div>
+      <h2 style="margin-top: 25px;">Shop Rồng Thiêng</h2>
+      <div class="thanhtimkiem">
+          <input type="text" id="searchInput" placeholder="Tìm vật phẩm..." >
+      </div>
+      <div class="shop-grid">
+        <div class="item-card">
+          <img src="../images/diendan2.webp" alt="halo1">
+          <h4>Hào Quang Thần Bí</h4>
+          <p>+5 Sát thương | Giá: <strong>20000 Zeni</strong></p>
+          <button onclick="muaVatPham('halo1', 20000)">Mua</button>
+        </div>
+
+        <div class="item-card">
+          <img src="../images/brl1.jpg" alt="shield1">
+          <h4>Khiên Năng Lượng</h4>
+          <p>Giảm 10% sát thương nhận | Giá: <strong>30000 Zeni</strong></p>
+          <button onclick="muaVatPham('shield1', 30000)">Mua</button>
+        </div>
+
+        <div class="item-card">
+          <img src="../images/goku1.png" alt="skinKaioken">
+          <h4>Skin Goku Kaioken</h4>
+          <p>Hiệu ứng đỏ rực cực ngầu | Giá: <strong>50000 Zeni</strong></p>
+          <button onclick="muaVatPham('skinKaioken', 50000)">Mua</button>
+        </div>
+
+        <div class="item-card">
+          <img src="../images/head2.webp" alt="petRong">
+          <h4>Rồng Con Hỗ Trợ</h4>
+          <p>Buff +10 dmg trong 10s | Giá: <strong>80000 Zeni</strong></p>
+          <button onclick="muaVatPham('petRong', 80000)">Mua</button>
+        </div>
+
+        <div class="item-card">
+          <img src="../images/quenmatkhau2.webp" alt="startHP">
+          <h4>Bình Máu Khởi Đầu</h4>
+          <p>+50 HP khi vào trận | Giá: <strong>100000 Zeni</strong></p>
+          <button onclick="muaVatPham('startHP', 100000)">Mua</button>
+        </div>
+
+        <div class="item-card">
+          <img src="../images/tintuc1.webp" alt="emoVIP">
+          <h4>Biểu Cảm VIP</h4>
+          <p>Mở biểu cảm đặc biệt | Giá: <strong>25000 Zeni</strong></p>
+          <button onclick="muaVatPham('emoVIP', 25000)">Mua</button>
+        </div>
+
+        <div class="item-card">
+          <img src="../images/vgtblue.webp" alt="skinVegetaBlue">
+          <h4>Skin Vegeta Blue</h4>
+          <p>Biến hình aura xanh | Giá: <strong>70000 Zeni</strong></p>
+          <button onclick="muaVatPham('skinVegetaBlue', 70000)">Mua</button>
+        </div>
+
+        <div class="item-card">
+          <img src="../images/400k.png" alt="x2Zeni48h">
+          <h4>Buff x2 Zeni (48h)</h4>
+          <p>Nạp Zeni sẽ x2 trong 48h | Giá: <strong>20000 Zeni</strong></p>
+          <button onclick="muaVatPham('x2Zeni48h', 20000)">Mua</button>
+        </div>
+      </div>
+
+    </div>
+    <div class="bg-content1">
+      <h2>🎁 Gói quà đặc quyền VIP</h2>
+      <div class="shop-grid">
+        <!-- VIP 1 -->
+        <div class="item-card">
+          <img src="../images/dangnhap1.jpg" alt="vip1gift">
+          <h4>Gói Khởi Động VIP</h4>
+          <p>50 Zeni + 1 bình máu nhỏ</p>
+          <p>Yêu cầu: <strong>VIP 1+</strong> | Giá: 0 Zeni</p>
+          <button onclick="nhanQuaVip('vip1gift', 1)">Nhận miễn phí</button>
+        </div>
+
+        <!-- VIP 2 -->
+        <div class="item-card">
+          <img src="../images/goku0.jpg" alt="vip2gift">
+          <h4>Gói Tăng Tốc</h4>
+          <p>Skin Goku thường + tăng tốc 5% trận đầu</p>
+          <p>Yêu cầu: <strong>VIP 2+</strong> | Giá: 0 Zeni</p>
+          <button onclick="nhanQuaVip('vip2gift', 2)">Nhận miễn phí</button>
+        </div>
+
+        <!-- VIP 3 -->
+        <div class="item-card">
+          <img src="../images/gohan1.jpg" alt="vip3gift">
+          <h4>Gói Gohan Tối Thượng</h4>
+          <p>Skin Gohan + 100 Zeni</p>
+          <p>Yêu cầu: <strong>VIP 3+</strong> | Giá: 0 Zeni</p>
+          <button onclick="nhanQuaVip('vip3gift', 3)">Nhận miễn phí</button>
+        </div>
+
+        <!-- VIP 4 -->
+        <div class="item-card">
+          <img src="../images/vegeta2.webp" alt="vip4gift">
+          <h4>Gói Áo Choàng Saiyan</h4>
+          <p>Skin Vegeta giáp xanh + pet rồng xoay</p>
+          <p>Yêu cầu: <strong>VIP 4+</strong> | Giá: 30000 Zeni</p>
+          <button onclick="muaVipGift('vip4gift', 4, 30000)">Mua</button>
+        </div>
+
+        <!-- VIP 5 -->
+        <div class="item-card">
+          <img src="../images/diendan1.webp" alt="vip5gift">
+          <h4>Hào Quang Xanh Đặc Biệt</h4>
+          <p>Hiệu ứng hào quang xanh + biểu cảm VIP</p>
+          <p>Yêu cầu: <strong>VIP 5+</strong> | Giá: 50000 Zeni</p>
+          <button onclick="muaVipGift('vip5gift', 5, 50000)">Mua</button>
+        </div>
+
+        <!-- VIP 6 -->
+        <div class="item-card">
+          <img src="../images/gblue2.jpg" alt="vip6gift">
+          <h4>Gói Thần Sấm</h4>
+          <p>Skin Goku Blue + hiệu ứng sấm chớp</p>
+          <p>Yêu cầu: <strong>VIP 6+</strong> | Giá: 80000 Zeni</p>
+          <button onclick="muaVipGift('vip6gift', 6, 80000)">Mua</button>
+        </div>
+
+        <!-- VIP 7 -->
+        <div class="item-card">
+          <img src="../images/broly2.jpg" alt="vip7gift">
+          <h4>Gói Siêu Chiến Binh</h4>
+          <p>Tăng 10% damage trong 5 trận + item độc</p>
+          <p>Yêu cầu: <strong>VIP 7+</strong> | Giá: 100000 Zeni</p>
+          <button onclick="muaVipGift('vip7gift', 7, 100000)">Mua</button>
+        </div>
+
+        <!-- VIP 8 -->
+        <div class="item-card">
+          <img src="../images/dangnhap9.jpg" alt="vip8gift">
+          <h4>Gói Kỹ Năng Bí Ẩn</h4>
+          <p>Mở kỹ năng skin bí ẩn + 200 Zeni</p>
+          <p>Yêu cầu: <strong>VIP 8+</strong> | Giá: 150000 Zeni</p>
+          <button onclick="muaVipGift('vip8gift', 8, 150000)">Mua</button>
+        </div>
+
+        <!-- Huyền Thoại -->
+        <div class="item-card">
+          <img src="../images/gohan2.webp" alt="vip10gift">
+          <h4>Gói Huyền Thoại Tối Thượng</h4>
+          <p>Mở toàn bộ skin + 500 Zeni + hiệu ứng vàng</p>
+          <p>Yêu cầu: <strong>👑 Huyền Thoại</strong> | Giá: 300000 Zeni</p>
+          <button onclick="muaVipGift('vip10gift', 9, 300000)">Mua</button>
+        </div>
+      </div>
+    </div>
+    <div class="bg-content1">
+      <h2>Lịch sử mua vật phẩm</h2>
+      <table border="1" style="width:100%;text-align:center">
+        <thead>
+          <tr>
+            <th>Thời gian</th>
+            <th>Vật phẩm</th>
+            <th>Giá (Zeni)</th>
+            <th>Mã Code</th>
+          </tr>
+        </thead>
+        <tbody id="lich-su-mua"></tbody>
+      </table>
+    </div>
+    <audio id="bg-music" autoplay loop>
+        <source src="../sounds/op1.mp3" type="audio/mpeg">
+    </audio>
+    <button id="toggle-music" class="music-toggle-btn">🔇</button>
+    <footer>
+        <p style="font-style: italic;"><strong>© 2025 Chiến Binh Rồng Thiêng | Phạm Hải Đăng</strong></p>
+    </footer>
+    <div id="toast"></div>
+    <script src="../js/darkmode.js"></script>
+    <script src="../js/phatnhac.js"></script>
+    <script src="../js/thongbao.js"></script>
+    <script src="../js/shop.js"></script>
+</body>
+</html>

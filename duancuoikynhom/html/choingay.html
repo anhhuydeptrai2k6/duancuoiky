@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chiến Binh Rồng Thiêng</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" href="../images/icongame1.png" type="image/png" />
+  <link rel="stylesheet" href="../css/choingay.css">
+  <link rel="stylesheet" href="../css/toast.css">
+</head>
+<body>
+  <div class="header">
+    <div style="overflow: hidden;">
+      <video autoplay muted loop playsinline preload="metadata" poster="../images/choingay1.webp"class="header-video" style="animation: vid1 10s infinite;filter: brightness(0.9)">
+        <source src="../images/choingay1.webm" type="video/webm">
+        <source src="../images/choingay1.mp4" type="video/mp4">
+      </video>
+      <video autoplay muted loop playsinline preload="metadata" poster="../images/choingay2.webp" class="header-video" style="animation: vid2 10s infinite;height:145%;filter: brightness(0.9)">
+        <source src="../images/choingay2.webm" type="video/webm">
+        <source src="../images/choingay2.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="overlay"></div>
+        <div class="header-content" >
+            <h1 id="main-title"> Bắt Đầu Cuộc Chiến!</h1>
+            <div>
+                <ul>
+                <li><a href="../index.html">Trang chủ</a></li>
+                <li><a href="gioithieu.html">Giới thiệu</a></li>
+                <li><a href="nhanvat.html">Nhân Vật</a></li>
+                <li><a href="diendan.html">Diễn đàn</a></li>
+                <li><a href="https://www.facebook.com/people/Chi%E1%BA%BFn-Binh-R%E1%BB%93ng-Thi%C3%AAng/61576541835732/" target="_blank">Fanpage</a></li>
+                <li><a href="tintuc.html">Tin tức</a></li>
+                <li><a href="huongdanchoi.html">Hướng dẫn chơi</a></li>
+                <li><a href="choingay.html" id="selected">Chơi ngay</a></li>
+                <li><a href="naptien.html">Nạp game</a></li>
+                <li><a href="shop.html">Shop rồng thiêng</a></li>
+                <li><a href="chatbot.html">Chat bot hỗ trợ</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="vinhdanh.html">Vinh danh chiến binh</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-content1"style="padding-top: 1px;">
+        <div style="float:right;margin-top:5px">
+            <label class="switch" style="margin-top:20px;margin-right: -17px;">
+                <input type="checkbox" id="darkModeToggle">
+                <span class="slider round"></span>
+            </label>
+        </div>
+        <div style="text-align: center;margin-top:51px">
+          <button id="login-btn" class="login-button hidden">Đăng nhập ngay</button>
+        </div>
+        <div id="game-container"></div>
+        <div class="download-buttons nut" style="text-align: center;">
+          <h3><i><b>Sức mạnh đang trỗi dậy! Chọn nền tảng, bước vào trận chiến tối thượng!</b></i></h3>
+          <p><i>Không còn đường lui... Nếu ngươi là chiến binh thực thụ, thì đây là lúc bùng nổ sức mạnh!</i></p>
+          <a href="../game/chienbinhrongthieng.html"><button>JAVA</button></a>
+          <a href="../game/chienbinhrongthieng.html"><button>ANDROID (APK)</button></a>
+          <a href="../game/chienbinhrongthieng.html"><button>ANDROID (Google Play)</button></a>
+          <a href="../game/chienbinhrongthieng.html"><button>PC</button></a>
+          <a href="../game/chienbinhrongthieng.html"><button>IPHONE</button></a>
+        </div> 
+    </div>
+    <audio id="bg-music" autoplay loop>
+        <source src="../sounds/op1.mp3" type="audio/mpeg">
+    </audio>
+    <button id="toggle-music" class="music-toggle-btn">🔇</button>
+    <footer>
+        <p style="font-style: italic;"><strong>© 2025 Chiến Binh Rồng Thiêng | Phạm Hải Đăng</strong></p>
+    </footer>
+    <div id="toast"></div>
+    <script src="../js/darkmode.js"></script>
+    <script src="../js/phatnhac.js"></script>
+    <script src="../js/thongbao.js"></script>
+    <script src="../js/choingay.js"></script>
+</body>
+</html>

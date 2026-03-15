@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chiến Binh Rồng Thiêng</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="icon" href="images/icongame1.png" type="image/png" />
+</head>
+<body>
+  <div class="header">
+    <div style="overflow: hidden;">
+      <video autoplay muted loop playsinline preload="metadata"poster="images/head1.webp" class="header-video" style="animation: vid1 10s infinite;filter: brightness(0.9)">
+        <source src="images/head1.webm" type="video/webm">
+        <source src="images/head1.mp4" type="video/mp4">
+      </video>
+      <video autoplay muted loop playsinline preload="metadata"poster="images/head2.webp" class="header-video" style="animation: vid2 10s infinite;height:120%;filter: brightness(0.9)">
+        <source src="images/head2.webm" type="video/webm">
+        <source src="images/head2.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="overlay"></div>
+    <div class="header-content" >
+      <h1>Chiến Binh Rồng Thiêng</h1>
+      <div>
+        <ul>
+          <li><a href="index.html"id="selected">Trang chủ</a></li>
+          <li><a href="html/gioithieu.html">Giới thiệu</a></li>
+          <li><a href="html/nhanvat.html">Nhân Vật</a></li>
+          <li><a href="html/diendan.html">Diễn đàn</a></li>
+          <li><a href="https://www.facebook.com/people/Chi%E1%BA%BFn-Binh-R%E1%BB%93ng-Thi%C3%AAng/61576541835732/" target="_blank">Fanpage</a></li>
+          <li><a href="html/tintuc.html">Tin tức</a></li>
+          <li><a href="html/huongdanchoi.html">Hướng dẫn chơi</a></li>
+          <li><a href="html/choingay.html">Chơi ngay</a></li>
+          <li><a href="html/naptien.html">Nạp game</a></li>
+          <li><a href="html/shop.html">Shop rồng thiêng</a></li>
+          <li><a href="html/chatbot.html">Chat bot hỗ trợ</a></li>
+          <li><a href="html/profile.html">Profile</a></li>
+          <li><a href="html/vinhdanh.html">Vinh danh chiến binh</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+
+  <div class="bg-content">
+    <div style="float:right;margin-top:5px">
+      <label class="switch">
+        <input type="checkbox" id="darkModeToggle">
+        <span class="slider round"></span>
+      </label>
+    </div>
+    <h2 style="margin-top:5px">🔥 Bắt đầu hành trình Chiến Binh Rồng Thiêng!</h2>
+    <p>Chiến đấu cùng Goku, Vegeta và những chiến binh huyền thoại khác ngay hôm nay!</p>
+    <div class="download-buttons">
+      <a href="#"><button onclick="checkdangnhap()">JAVA</button></a>
+      <a href="#"><button onclick="checkdangnhap()">ANDROID (APK)</button></a>
+      <a href="#"><button onclick="checkdangnhap()">ANDROID (Google Play)</button></a>
+      <a href="#"><button onclick="checkdangnhap()">PC</button></a>
+      <a href="html/choingay.html"><button onclick="checkdangnhap()">IPHONE</button></a>
+    </div>
+  </div>
+  <div class="bg-content1">
+    <h2>Thông Tin Chung</h2>
+    <p><strong>Chiến Binh Rồng Thiêng</strong> là trò chơi đối kháng trực tuyến với cốt truyện lấy cảm hứng từ bộ manga huyền thoại 7 Viên Ngọc Rồng. Người chơi sẽ hóa thân thành các chiến binh huyền thoại như Goku, Vegeta, Piccolo, Broly, Gohan,... để tham gia vào những trận chiến nghẹt thở. Hãy rèn luyện kỹ năng, tích lũy sức mạnh và phối hợp chiêu thức để trở thành chiến binh mạnh nhất vũ trụ!</p>
+    <p>Đặc điểm nổi bật :</p>
+    <p>- Thể loại hành động – đối kháng 2 người chơi, bạn có thể đấu cùng bạn bè hoặc đấu với AI thông minh.</p>
+    <p>- Trực tiếp điều khiển nhân vật, thi triển combo, kỹ năng đặc biệt, chiêu cuối (Ultimate) và biến hình đặc biệt như: Goku Ultra Instinct, Vegeta Oozaru, Piccolo Orange, Broly SSJ4, Gohan Max Beast,...</p>
+    <p>- Cơ chế chiến đấu linh hoạt, dễ làm quen nhưng đòi hỏi phản xạ, chiến thuật và khả năng xử lý tình huống.</p>
+    <p>- AI thông minh, biết né đòn, phản công và sử dụng skill theo tình huống.</p>
+    <p>- Đồ họa 2D pixel đậm chất Dragon Ball, chạy mượt trên mọi máy tính, kể cả cấu hình thấp.</p>
+    <p>- Nhiều chế độ chơi hấp dẫn: Chọn nhân vật, PvP, PvE, biến hình chiến thuật – tất cả tạo nên những trận chiến cực kỳ kịch tính và giải trí.</p>
+  </div>
+  <div class="bg-content1">
+    <h2>Hướng Dẫn Tân Thủ</h2>
+    <p style="margin-bottom: 22px;margin-top:-4px"><strong>1. Đăng ký tài khoản</strong></p>
+    <p>Chiến Binh Rồng Thiêng sử dụng hệ thống tài khoản riêng (không dùng chung với bất kỳ game nào khác).</p>
+    <p>Người chơi có thể đăng ký tài khoản miễn phí ngay tại diễn đàn nơi bạn cũng có thể trao đổi kinh nghiệm, chia sẻ mẹo chơi và cập nhật những tin tức mới nhất về Chiến Binh Rồng Thiêng...</p>
+    <p>Hãy dùng email hoặc số điện thoại thật để dễ dàng khôi phục mật khẩu khi cần.</p>
+    <p>Thông tin cá nhân sẽ được bảo mật tuyệt đối, và admin sẽ không bao giờ hỏi mật khẩu.</p>
+    <p style="margin-top:12px;margin-bottom:22px"><strong>2. Hướng dẫn điều khiển</strong></p>
+    <p><strong>Đối với PC:</strong> Sử dụng bàn phím để điều khiển nhân vật, di chuyển, tung chiêu và biến hình. Các phím được bố trí trực quan, dễ làm quen.</p>
+    <p><strong>Đối với Mobile:</strong> Game đã tích hợp sẵn các nút điều khiển trên màn hình cảm ứng, tối ưu cho thao tác chạm và trải nghiệm mượt mà.</p>
+    <p style="margin-top:12px;margin-bottom:22px"><strong>3. Một số thông tin căn bản</strong></p>
+    <p>KI là năng lượng dùng để tung chiêu, biến hình và sử dụng ultimate. Khi KI = 0, bạn không thể sử dụng kỹ năng đặc biệt.</p>
+    <p>Phòng thủ (giữ phím) giúp giảm 50% sát thương nhận vào, rất quan trọng khi đối thủ combo hoặc tung skill mạnh</p>
+    <p>Mỗi nhân vật có bộ kỹ năng riêng biệt, chỉ số máu và sát thương khác nhau, cùng với các hình thái biến hình đặc trưng </p>
+  </div>
+  <div class="bg-content1">
+    <h2>Người Chơi Nói Gì</h2>
+    <blockquote>💥 "Chiêu cuối của Broly đúng chất phá hoại, quá đã!" – SaiyanHủyDiệt</blockquote>
+    <blockquote>🔥 "Goku UI né đòn cực đỉnh, đúng kiểu thần thánh!" – UltraFan99</blockquote>
+    <blockquote>😱 "Piccolo triệu hồi phân thân và hồi máu siêu ảo!" – NamekianMain</blockquote>
+    <blockquote>🎮 "Chơi Vegeta cảm giác như đang thống trị vũ trụ!" – PrinceOfSaiyan</blockquote>
+    <blockquote>💡 "Giao diện đơn giản, kỹ năng mượt, chơi nghiện luôn!" – TânThủTrẻTrâu</blockquote>
+    <blockquote>💯 "Không ngờ game nhẹ mà biến hình, ultimate đủ cả!" – ReviewerẨnDanh</blockquote>
+    <blockquote>👊 "Gohan Max Beast gánh team cực mạnh, cảm giác bá đạo!" – GohanTốiThượng</blockquote>
+    <blockquote>🌟 "AI mà khôn thật, né ulti mình hoài luôn á..." – ProThậtKhôngĐùa</blockquote>
+    <blockquote>👑 "Game PVP đậm chất Dragon Ball thì hay là đúng rồi!" – FanCứngCBRT</blockquote>
+  </div>
+  <div class="bg-content1 faq-section">
+    <h2>Câu Hỏi Thường Gặp</h2>
+    <p><strong>🎮 Game có chơi được một mình không?</strong><br>
+    ✅Có! Bạn có thể nhấn phím C khi chọn nhân vật để chơi chế độ 1 người — đấu với AI do máy điều khiển.</p>
+    <p><strong>🧠 AI trong game có thông minh không?</strong><br>
+    ✅Khá linh hoạt! AI có thể:
+    Biết né đòn nếu bị spam,
+    dùng chiêu ultimate, hồi máu, biến hình,
+    tận dụng clone hoặc hiệu ứng đặc biệt theo từng nhân vật</p>
+    <p><strong>🎵 Game có âm thanh không?</strong><br>
+    ✅Có! Nhạc nền Dragon Ball GT được phát tự động khi chơi. Nếu bạn không nghe thấy, hãy thử: Nhấn 1 lần vào màn hình game (một số trình duyệt chặn nhạc auto), Reload trang để thử lại
+    </p>
+    <p><strong>📱 Tôi có thể chơi trên điện thoại không?</strong><br>
+    ✅Game hoạt động tốt nhất trên máy tính có bàn phím, nhưng với điện thoại game cũng đã có bản riêng.
+    </p>
+    <p><strong>🧬 Có những nhân vật nào?</strong><br>
+    ✅Hiện tại có 5 nhân vật, mỗi người đều có skill riêng, ultimate riêng, và biến hình
+    </p>
+    <p><strong>🎨 Game có đổi skin được không?</strong><br>
+    ✅Chưa hỗ trợ đổi skin trong game, nếu bạn có góp ý hãy gửi mail tới: <a class="a1" href="">dangph.ptit@gmail.com</a>.
+    </p>
+    <p><strong>💾 Game có lưu điểm không?</strong><br>
+    ✅Không. Phiên bản web này không lưu điểm hoặc thống kê để giữ game nhẹ, nhanh và dễ chơi.
+    </p>
+    <p><strong>🛠️ Game bị lỗi không chơi được thì sao?</strong><br>
+    ✅Sử dụng trình duyệt hiện đại như Chrome hoặc Firefox,nếu không được hãy thử Reload lại trang 
+    </p>
+  </div>
+  <div class="bg-content">
+    <h2>Bạn nên tải phiên bản nào?</h2>
+    <p>Nếu bạn dùng điện thoại Nokia cũ, có bàn phím như Nokia 6300, Nokia E72, Nokia X2, Nokia C2, Hãy tải bản JAVA</p>
+    <p>Nếu bạn dùng máy cảm ứng sử dụng Android như: Samsung Galaxy Y, HTC, LG, Sky, HKPhone. Hãy tải bản Android APK hoặc Android Playstore đều được.</p>
+    <p>Nếu bạn dùng điện thoại cảm ứng của NOKIA Lumia, hoặc các máy HTC chạy Windows Phone, hãy tải bản cho Windows Phone.</p>
+    <p>Nếu bạn dùng máy vi tính cá nhân, laptop chạy Windows XP - Windows 7, hãy tải bản PC.</p>
+    <p>Nếu bạn dùng iPhone, iPod, iPad, hãy tải bản iPhone Appstore. Nếu bạn biết chắc rằng máy mình đã jailbreak, có cài AppSync hoặc AppstoreVN, hãy cài từ bản iPhone jailbreak để tốc độ nhanh hơn.</p>
+  </div>
+  <div class="bg-content1" style="text-align: center;">
+    <h2><i>Bạn đã sẵn sàng chưa ?</i></h2>
+    <p><i>Tải ngay và thách đấu bạn bè trong thế giới Chiến Binh Rồng Thiêng!</i></p>
+    <div class="download-buttons">
+      <a href="gctcn.html"><button>JAVA</button></a>
+      <a href="gctcn.html"><button>ANDROID (APK)</button></a>
+      <a href="gctcn.html"><button>ANDROID (Google Play)</button></a>
+      <a href="gctkn.html"><button>PC</button></a>
+      <a href="choingay.html"><button>IPHONE</button></a>
+    </div>
+  </div>
+  <audio id="bg-music" autoplay loop>
+    <source src="../sounds/op1.mp3" type="audio/mpeg">
+  </audio>
+  <button id="toggle-music" class="music-toggle-btn">🔇</button>
+  <footer>
+    <p style="font-style: italic;"><strong>© 2025 Chiến Binh Rồng Thiêng | Phạm Hải Đăng</strong></p>
+  </footer>
+  <script src="js/darkmode.js"></script>
+  <script src="js/phatnhac.js"></script>
+  <script>
+    function checkdangnhap(){
+      const user=JSON.parse(sessionStorage.getItem("currentUser"));
+      if (!user){
+        window.location.href="html/dangnhap.html"
+      } else {
+        window.location.href="game/chienbinhrongthieng.html"
+      }
+    }
+  </script>
+</body>
+</html>

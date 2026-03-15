@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chiến Binh Rồng Thiêng</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" href="../images/icongame1.png" type="image/png" />
+  <link rel="stylesheet" href="../css/quenmatkhau.css">
+  <link rel="stylesheet" href="../css/toast.css">
+</head>
+<body>
+  <div class="header">
+    <div style="overflow: hidden;">
+      <video autoplay muted loop playsinline preload="metadata" poster="../images/gioithieu.webp" class="header-video" style="animation: vid1 10s infinite;filter: brightness(0.9)">
+        <source src="../images/gioithieu.webm" type="video/webm">
+        <source src="../images/gioithieu.mp4" type="video/mp4">
+      </video>
+      <video autoplay muted loop playsinline preload="metadata" poster="../images/quenmatkhau2.webp" class="header-video" style="animation: vid2 10s infinite;height: 100%;filter: brightness(0.9)">
+        <source src="../images/quenmatkhau2.webm" type="video/webm">
+        <source src="../images/quenmatkhau2.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="overlay"></div>
+        <div class="header-content" >
+            <h1>Khôi Phục Sức Mạnh</h1>
+            <div>
+                <ul>
+                <li><a href="../index.html">Trang chủ</a></li>
+                <li><a href="gioithieu.html">Giới thiệu</a></li>
+                <li><a href="nhanvat.html">Nhân Vật</a></li>
+                <li><a href="diendan.html">Diễn đàn</a></li>
+                <li><a href="https://www.facebook.com/people/Chi%E1%BA%BFn-Binh-R%E1%BB%93ng-Thi%C3%AAng/61576541835732/" target="_blank">Fanpage</a></li>
+                <li><a href="tintuc.html">Tin tức</a></li>
+                <li><a href="huongdanchoi.html">Hướng dẫn chơi</a></li>
+                <li><a href="choingay.html">Chơi ngay</a></li>
+                <li><a href="naptien.html">Nạp game</a></li>
+                <li><a href="shop.html">Shop rồng thiêng</a></li>
+                <li><a href="chatbot.html">Chat bot hỗ trợ</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="vinhdanh.html">Vinh danh chiến binh</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-content1"style="padding-top: 1px;">
+        <div style="float:right;margin-top:5px">
+            <label class="switch" style="margin-top:20px;margin-right: -17px;">
+                <input type="checkbox" id="darkModeToggle">
+                <span class="slider round"></span>
+            </label>
+        </div>
+        <div style="text-align: center;margin-top:62px">
+            <h2>“Khôi Phục Sức Mạnh – Đừng Để Truyền Kỳ Kết Thúc!”</h2>
+            <p><i><b>Chỉ một lần lãng quên – nhưng không phải là dấu chấm hết.  Hãy thức tỉnh chiến binh trong bạn, phục hồi sức mạnh, và tiếp tục viết nên huyền thoại Rồng Thiêng!</b></i></p>
+        </div>
+    </div>
+    <div class="bg-content">
+        <div class="cont">
+            <div class="form sign-in">
+                <h2>Quên Mật Khẩu</h2>
+                <label>
+                    <span>Tài Khoản</span>
+                    <input type="text" name="taikhoan" id="forgot-username">
+                </label>
+                <label>
+                    <span>Email</span>
+                    <input type="email" name="email" id="forgot-email">
+                </label>
+                <button class="submit button1" type="button" onclick="handleForgotPassword()">Khôi Phục</button>
+                <p class="forgot-pass">Đã có mật khẩu ?<a href="dangnhap.html"> Đăng nhập</a></p>
+
+                <div class="social-media">
+                    <ul style="padding-left:0px">
+                        <li><a href="https://facebook.com/danghaipham"><img src="../images/facebook.png"></a></li>
+                        <li><a href="https://facebook.com/danghaipham"><img src="../images/twitter.png"></a></li>
+                        <li><a href="https://facebook.com/danghaipham"><img src="../images/linkedin.png"></a></li>
+                        <li><a href="https://facebook.com/danghaipham"><img src="../images/instagram.png"></a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="sub-cont">
+                <div class="img" >
+                    <div class="img-text m-up">
+                    <h3>Sức mạnh trong bạn vẫn chưa biến mất!<h3>
+                    <p>Hãy khôi phục tài khoản và trở lại mạnh mẽ hơn bao giờ hết!</p>
+                    </div>
+                    <div class="img-text m-in">
+                    <h3>Tái tạo niềm tin – tái lập sức mạnh!</h3>
+                    <p>Hãy mở cánh cổng sức mạnh – cuộc hành trình vẫn đang chờ đợi bạn!</p>
+                    </div>
+                    <div class="img-btn">
+                    <span class="m-up">Đổi Mật Khẩu</span>
+                    <span class="m-in">Quên Mật Khẩu</span>
+                    </div>
+                </div>
+                <div class="form sign-up">
+                    <h2>Đổi Mật Khẩu</h2>
+                    <label>
+                    <span>Email</span>
+                    <input type="email" id="reset-email">
+                    </label>
+                    <label>
+                    <span>Mật khẩu</span>
+                    <input type="password" id="reset-oldpass">
+                    </label>
+                    <label>
+                    <span>Mật khẩu mới</span>
+                    <input type="password" id="reset-newpass">
+                    </label>
+                    <label>
+                    <span>Xác nhận mật khẩu mới</span>
+                    <input type="password" id="reset-confirm">
+                    </label>
+                    <button type="button" class="submit button1" onclick="handleResetPassword()">Thiết Lập Mật Khẩu</button>
+            </div>
+        </div>
+    </div>
+    <audio id="bg-music" autoplay loop>
+        <source src="../sounds/op1.mp3" type="audio/mpeg">
+    </audio>
+    <button id="toggle-music" class="music-toggle-btn">🔇</button>
+    <footer>
+        <p style="font-style: italic;"><strong>© 2025 Chiến Binh Rồng Thiêng | Phạm Hải Đăng</strong></p>
+    </footer>
+    <div id="toast"></div>
+    <script src="../js/darkmode.js"></script>
+    <script src="../js/phatnhac.js"></script>
+    <script src="../js/thongbao.js"></script>
+    <script src="../js/quenmatkhau.js"></script>
+</body>
+</html>

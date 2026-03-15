@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Chiến Binh Rồng Thiêng</title>
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="icon" href="../images/icongame1.png" type="image/png" />
+  <link rel="stylesheet" href="../css/chatbot.css">
+</head>
+<body>
+  <div class="header">
+    <div style="overflow: hidden;">
+      <video autoplay muted loop playsinline preload="metadata" poster="../images/diendan2.webp" class="header-video" style="animation: vid1 10s infinite;height:120%;filter: brightness(0.9)">
+        <source src="../images/diendan2.webm" type="video/webm">
+        <source src="../images/diendan2.mp4" type="video/mp4">
+      </video>
+      <video autoplay muted loop playsinline preload="metadata" poster="../images/huongdanchoi1.webp" class="header-video" style="animation: vid2 10s infinite;filter: brightness(0.9)">
+        <source src="../images/huongdanchoi1.webm" type="video/webm">
+        <source src="../images/huongdanchoi1.mp4" type="video/mp4">
+      </video>
+    </div>
+    <div class="overlay"></div>
+        <div class="header-content" >
+            <h1>Khu Vực Hỗ Trợ Chiến Binh</h1>
+            <div>
+                <ul>
+                <li><a href="../index.html">Trang chủ</a></li>
+                <li><a href="gioithieu.html">Giới thiệu</a></li>
+                <li><a href="nhanvat.html">Nhân Vật</a></li>
+                <li><a href="diendan.html">Diễn đàn</a></li>
+                <li><a href="https://www.facebook.com/people/Chi%E1%BA%BFn-Binh-R%E1%BB%93ng-Thi%C3%AAng/61576541835732/" target="_blank">Fanpage</a></li>
+                <li><a href="tintuc.html">Tin tức</a></li>
+                <li><a href="huongdanchoi.html">Hướng dẫn chơi</a></li>
+                <li><a href="choingay.html">Chơi ngay</a></li>
+                <li><a href="naptien.html">Nạp game</a></li>
+                <li><a href="shop.html" >Shop rồng thiêng</a></li>
+                <li><a href="chatbot.html" id="selected">Chat bot hỗ trợ</a></li>
+                <li><a href="profile.html">Profile</a></li>
+                <li><a href="vinhdanh.html">Vinh danh chiến binh</a></li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <div class="bg-content">
+        <div style="float:right;margin-top:5px">
+            <label class="switch">
+                <input type="checkbox" id="darkModeToggle">
+                <span class="slider round"></span>
+            </label>
+        </div>
+        <h2 style="text-align: center;">Không chiến binh nào chiến đấu một mình!</h2>
+        <p><i><b>Tại đây, bạn có thể hỏi bất kỳ điều gì về game, lỗi, cách chơi, hay chỉ đơn giản là muốn tâm sự một chút cùng trợ lý ảo. Chúng tôi luôn lắng nghe!</b></i></p>
+    </div>
+    <div class="bg-content1">
+      <div style="margin-top:-4px;" id="chat-box">
+          <div class="bot">🤖 bot game: Chiến binh cần tôi giúp gì ?</div>
+      </div>
+      <div class="input-area">
+          <input type="text" id="user-input" placeholder="Bạn cần giúp gì ..." />
+          <button class="button1" onclick="sendMessage()">Gửi</button>
+      </div>
+    </div>
+    <audio id="bg-music" autoplay loop>
+        <source src="../sounds/op1.mp3" type="audio/mpeg">
+    </audio>
+    <button id="toggle-music" class="music-toggle-btn">🔇</button>
+    <footer>
+        <p style="font-style: italic;"><strong>© 2025 Chiến Binh Rồng Thiêng | Phạm Hải Đăng</strong></p>
+    </footer>
+    <script src="../js/darkmode.js"></script>
+    <script src="../js/phatnhac.js"></script>
+    <script src="../js/chatbot.js"></script>
+</body>
+</html>
