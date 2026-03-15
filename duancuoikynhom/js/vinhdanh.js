@@ -56,7 +56,7 @@ if (!currentSession) {
     if (soNgay >= 2 && !user.thanhTich.includes("login5")) {
         html += `
         <div class="huy-hieu-card locked" id="card-login5">
-            📅 Chiến Binh Chăm Chỉ<br/>
+            📅 Ninja Chăm Chỉ<br/>
             Đăng nhập 2 ngày<br/>
             <button onclick="nhanThuong('login5', 200000, 'bronze')">
             Nhận thưởng
@@ -65,19 +65,19 @@ if (!currentSession) {
     } else if (user.thanhTich.includes("login5")) {
         html += `
         <div class="huy-hieu-card bronze">
-            📅 Chiến Binh Chăm Chỉ<br/>Đăng nhập 2 ngày<br/>✅ Hoàn thành
+            📅 Ninja Chăm Chỉ<br/>Đăng nhập 2 ngày<br/>✅ Hoàn thành
         </div>`;
     } else {
         html += `
         <div class="huy-hieu-card locked">
-            📅 Chiến Binh Chăm Chỉ<br/>Còn ${2 - soNgay} ngày nữa
+            📅 Ninja Chăm Chỉ<br/>Còn ${2 - soNgay} ngày nữa
         </div>`;
     }
 
     if (tongZeni >= 500000 && !user.thanhTich.includes("vipmax")) {
         html += `
         <div class="huy-hieu-card locked" id="card-vipmax">
-            🐉 Thần Rồng Gọi Tên<br/>
+            Lục Đạo Gọi Tên<br/>
             VIP cấp cao nhất<br/>
             <button onclick="nhanThuong('vipmax', 500000, 'dragon-god')">
             Nhận thưởng VIP
@@ -86,12 +86,12 @@ if (!currentSession) {
     } else if (user.thanhTich.includes("vipmax")) {
         html += `
         <div class="huy-hieu-card dragon-god">
-            🐉 Thần Rồng Gọi Tên<br/>VIP cấp cao nhất<br/>👑 TOP NẠP 👑
+            Lục Đạo Gọi Tên<br/>VIP cấp cao nhất<br/>👑 TOP NẠP 👑
         </div>`;
     } else {
         html += `
         <div class="huy-hieu-card locked">
-            🐉 Thần Rồng Gọi Tên<br/>Cần thêm ${(500000 - tongZeni).toLocaleString()} Zeni
+            Lục Đạo Gọi Tên<br/>Cần thêm ${(500000 - tongZeni).toLocaleString()} Lượng
         </div>`;
     }
 
@@ -149,13 +149,13 @@ function demSoNgayOnline(email) {
 function getHuyHieuHTML(ma) {
     switch(ma) {
     case "rongvang":
-    return "💎 Rồng Vàng<br/>Nạp trên 100.000 Zeni";
+    return "💎 Rồng Vàng<br/>Nạp trên 100.000 Lượng";
     case "hunter10":
     return "🛍️ Thợ Săn Vật Phẩm<br/>Đã mua 10 vật phẩm";
     case "login5":
-    return "📅 Chiến Binh Chăm Chỉ<br/>Đăng nhập 5 ngày";
+    return "📅 Ninja Chăm Chỉ<br/>Đăng nhập 5 ngày";
     case "vipmax":
-    return "🐉 Thần Rồng Gọi Tên<br/>VIP cấp cao nhất";
+    return "Lục Đạo Gọi Tên<br/>VIP cấp cao nhất";
     case "hunter17":
     return "🎁 Mở Rương Nhiều Nhất<br/>Đã mua 17 vật phẩm";
     case "login15":
@@ -169,7 +169,7 @@ function nhanThuong(ma, soTien, cap) {
     user.kimcuong += soTien;
     user.thanhTich.push(ma);
     localStorage.setItem("users", JSON.stringify(users));
-    showToast(`✅ Nhận ${soTien.toLocaleString()} Zeni từ thành tích!`);
+    showToast(`✅ Nhận ${soTien.toLocaleString()} Lượng từ thành tích!`);
     const card = document.getElementById("card-" + ma);
     card.classList.remove("locked");
     card.classList.add(cap); 
@@ -192,17 +192,17 @@ function getVipLevel(zeni) {
 
 function getTitle(vip) {
     const titles = [
-        "⚪ Tân Binh",                 // VIP 0
-        "🔰 Chiến Binh Z",             // VIP 1
-        "💥 Chiến Binh Tối Thượng",         // VIP 2
-        "🌟 Hộ Vệ Vũ Trụ",            // VIP 3
-        "💠 Kaioshin Tập Sự",              // VIP 4
-        "🔥 Kaioshin Tối Cao",             // VIP 5
-        "🔥 Vương Thần Sơ Khai",             // VIP 6
-        "🔷 Thần Hủy Diệt",       // VIP 7
-        "🔷 Thần Thiên Sứ",  // VIP 8
-        "💠 Đại Thiên Sứ",            // VIP 9
-        "<strong>👑 Chiến Binh Truyền Thuyết</strong>" // VIP 10+
+        "⚪ Học Viện Ninja",           // VIP 0
+        "🔰 Hạ Nhẫn",                  // VIP 1
+        "⚔️ Trung Nhẫn",               // VIP 2
+        "🔥 Thượng Nhẫn",              // VIP 3
+        "🐺 Anbu Tập Sự",              // VIP 4
+        "⚡ Anbu",                     // VIP 5
+        "🛡️ Đội Trưởng Anbu",          // VIP 6
+        "👑 Kage",                    // VIP 7
+        "💠 Lục Đạo Ninja",            // VIP 8
+        "🌟 Thánh Ninja",              // VIP 9
+        "<strong>👑 Huyền Thoại Ninja</strong>" // VIP 10+
     ];
     return titles[vip];
 }
@@ -278,7 +278,7 @@ function renderThanhTichAn() {
             user.kimcuong += 50000;
             user.thanhTich.push("ronglua");
             localStorage.setItem("users", JSON.stringify(users));
-            showToast("✅ Nhận 50.000 Zeni từ thành tích Rồng Lửa!");
+            showToast("✅ Nhận 50.000 Lượng từ thành tích Rồng Lửa!");
         }
     }
 
@@ -292,7 +292,7 @@ function renderThanhTichAn() {
         user.kimcuong += 40000;
         user.thanhTich.push("collector");
         localStorage.setItem("users", JSON.stringify(users));
-        showToast("✅ Nhận 40.000 Zeni từ thành tích Sưu Tầm Siêu Cấp!");
+        showToast("✅ Nhận 40.000 Lượng từ thành tích Sưu Tầm Siêu Cấp!");
     }
     }
 
@@ -306,7 +306,7 @@ function renderThanhTichAn() {
             user.kimcuong += 30000;
             user.thanhTich.push("trungthanh");
             localStorage.setItem("users", JSON.stringify(users));
-            showToast("✅ Nhận 30.000 Zeni từ Chiến Binh Trung Thành!")
+            showToast("✅ Nhận 30.000 Lượng từ Chiến Binh Trung Thành!")
     }}
 
     if (html === "") {

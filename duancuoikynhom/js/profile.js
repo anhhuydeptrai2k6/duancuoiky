@@ -33,16 +33,16 @@ if (!user) {
         }
     }
     const vipBadges = [
-    "Base Form",         // VIP 0
-    "SSJ 1 ⚡",         // VIP 1
-    "SSJ 2 ⚡", // VIP 2
-    "SSJ 3 ⚡",       // VIP 3
-    "SSJ GOD 🔥",       // VIP 4
-    "SSJ BLUE 🔥",       // VIP 5
-    "SSJ ROSE 🔥",      // VIP 6
-    "Ultra Instinct -Sign- 🔷",       // VIP 7
-    "True Ultra Instinct 🔷",// VIP 8
-    "Master Ultra Instinct 💠"     // Huyền thoại
+        "Dân Làng",          // VIP 0
+        "Hạ Nhẫn 🍃",        // VIP 1
+        "Trung Nhẫn ⚔️",     // VIP 2
+        "Thượng Nhẫn 🔥",    // VIP 3
+        "Anbu 🐺",           // VIP 4
+        "Đội Trưởng Anbu ⚡", // VIP 5
+        "Hokage Tập Sự 👑",  // VIP 6
+        "Hokage ⚡",         // VIP 7
+        "Lục Đạo Ninja 💠",  // VIP 8
+        "Huyền Thoại Ninja 🌟" // VIP 9
     ];
     let danhHieu = [];
     danhHieu.push(vipBadges[capHienTai]);
@@ -57,7 +57,7 @@ if (!user) {
         avatar.src = "../images/vip10.1.avif"; 
     }
 
-    capBacSpan.textContent = capHienTai >= vipMoc.length - 1 ? "👑 Huyền Thoại Rồng Thiêng" : `VIP ${capHienTai}`;
+    capBacSpan.textContent = capHienTai >= vipMoc.length - 1 ? "👑 Huyền Thoại Ninja" : `VIP ${capHienTai}`;
     if (capHienTai >= 0 && capHienTai <= 8) {
         avatar.classList.add(`vip-frame-${capHienTai}`);
     } else {
@@ -69,11 +69,11 @@ if (!user) {
         const mucTiepTheo = vipMoc[capHienTai + 1];
         const tienTrinh = ((tongZeniDaNap - mucHienTai) / (mucTiepTheo - mucHienTai)) * 100;
         document.getElementById("vip-bar").style.width = tienTrinh + "%";
-        vipNext.textContent = `🔒 Bạn cần thêm ${(mucTiepTheo - tongZeniDaNap).toLocaleString()} Zeni để lên VIP ${capHienTai + 1}`;
+        vipNext.textContent = `🔒 Bạn cần thêm ${(mucTiepTheo - tongZeniDaNap).toLocaleString()} Lượng để lên VIP ${capHienTai + 1}`;
     } else {
         document.getElementById("vip-bar").style.width = "100%";
         document.getElementById("vip-bar").style.background = "line-gradient(to right,#b2ebf2,#00e5ff)";
-        vipNext.textContent = "🎉 Bạn đã trở thành chiến binh trong truyền thuyết!";
+        vipNext.textContent = "🎉 Bạn đã trở thành Ninja trong truyền thuyết!";
     }
 
     // Lịch sử nạp
@@ -112,7 +112,7 @@ function getCapBac(tong) {
     if (tong < 200000) return "VIP 6";
     if (tong < 300000) return "VIP 7";
     if (tong < 500000) return "VIP 8";
-    return "👑 Huyền Thoại Rồng Thiêng";
+    return "👑 Ninja Huyền Thoại";
 }
 
 function logout() {

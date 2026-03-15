@@ -44,7 +44,7 @@ function muaVatPham(ma, gia) {
         return;
     }
     if ((userr.kimcuong || 0) < gia) {
-        showToast("❌ Không đủ Zeni!");
+        showToast("❌ Không đủ Lượng!");
         return;
     }
     userr.items = userr.items || [];
@@ -93,7 +93,7 @@ function getCapBac(tong) {
     if (tong < 200000) return "VIP 6";
     if (tong < 300000) return "VIP 7";
     if (tong < 500000) return "VIP 8";
-    return "👑 Huyền Thoại Rồng Thiêng";
+    return "👑 Ninja Huyền Thoại";
 }
 function getVipLevel(tong) {
     if (tong < 1000) return 0;
@@ -153,7 +153,7 @@ function muaVipGift(ma, vipYeuCau, gia) {
     }
 
     if ((userr.kimcuong || 0) < gia) {
-        showToast("❌ Không đủ Zeni để mua!");
+        showToast("❌ Không đủ Lượng để mua!");
         return;
     }
     userr.items = userr.items || [];

@@ -82,10 +82,10 @@ function xacNhanChuyenKhoan() {
         });
         localStorage.setItem("users", JSON.stringify(users));
         document.getElementById("kc-hientai").textContent = userr.kimcuong;
-        showToast(`✅ Nạp thành công ${tongKC} Zeni!`);
+        showToast(`✅ Nạp thành công ${tongKC} Lượng!`);
         tongTien = 0;
         tongKC = 0;
-        document.getElementById("tong-nap").textContent = `Tổng tiền: 0 VNĐ | Tổng Zeni: 0`;
+        document.getElementById("tong-nap").textContent = `Tổng tiền: 0 VNĐ | Tổng Lượng: 0`;
 
         // Cập nhật lịch sử
         let tongZeniDaNap = 0;
@@ -119,7 +119,7 @@ function getCapBac(tong) {
     if (tong < 200000) return "VIP 6";
     if (tong < 300000) return "VIP 7";
     if (tong < 500000) return "VIP 8";
-    if (tong >= 500000) return "👑 Huyền Thoại Rồng Thiêng";
+    if (tong >= 500000) return "👑 Ninja Huyền Thoại";
 }
 function logout() {
     sessionStorage.removeItem("currentUser");

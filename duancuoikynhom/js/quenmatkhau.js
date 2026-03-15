@@ -15,7 +15,7 @@ function handleResetPassword() {
     }
 
     if (!user || user.password !== oldpass) {
-        showToast("❌ Kết nối thất bại – thông tin không khớp với chiến binh trước đó.");
+        showToast("❌ Kết nối thất bại – thông tin không khớp với ninja trước đó.");
         return;
     }
 
@@ -37,7 +37,7 @@ function handleForgotPassword() {
     const email = document.getElementById("forgot-email").value.trim();
 
     if (!username || !email) {
-        showToast("⚠️ Thiếu thông tin! Chiến binh cần nhập đầy đủ để khôi phục sức mạnh.");
+        showToast("⚠️ Thiếu thông tin! Ninja cần nhập đầy đủ để khôi phục sức mạnh.");
         return;
     }
 
@@ -45,13 +45,13 @@ function handleForgotPassword() {
     const user = users.find(u => u.username === username && u.email === email);
 
     if (!user) {
-        showToast("❌ Không tìm thấy chiến binh nào khớp với thông tin trên!");
+        showToast("❌ Không tìm thấy Ninja nào khớp với thông tin trên!");
         return;
     }
 
-    showToast(`✅ Mật khẩu của chiến binh ${user.username} là: ${user.password}`);
+    showToast(`✅ Mật khẩu của ninja ${user.username} là: ${user.password}`);
     setTimeout(()=>{
-        showToast("✅ Xác thực thành công – Chiến binh, hãy thiết lập mật khẩu mới để sẵn sàng bước vào trận chiến kế tiếp!")
+        showToast("✅ Xác thực thành công – Ninja, hãy thiết lập mật khẩu mới để sẵn sàng bước vào trận chiến kế tiếp!")
         document.querySelector('.cont').classList.add('s-signup'); 
     },4000)
 }

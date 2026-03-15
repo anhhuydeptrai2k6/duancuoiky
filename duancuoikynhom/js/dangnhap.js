@@ -8,11 +8,11 @@ function handleRegister() {
     const confirm = document.getElementById("signup-confirm").value;
 
     if (!username || !email || !password || !confirm) {
-        showToast("❌ Bạn chưa sẵn sàng – hãy điền đầy đủ thông tin để khai sinh chiến binh mới.");
+        showToast("❌ Bạn chưa sẵn sàng – hãy điền đầy đủ thông tin để khai sinh Ninja mới.");
         return;
     }
     if (email==="admin"){
-        showToast("❌ Đây là email của admin chiến binh hãy đăng ký email khác!")
+        showToast("❌ Đây là email của admin hãy đăng ký email khác!")
         return;
     }
     if (password !== confirm) {
@@ -22,12 +22,12 @@ function handleRegister() {
     let users = JSON.parse(localStorage.getItem("users")) || [];
     const emailExists = users.some(user => user.email === email);
     if (emailExists) {
-        showToast("❌ Chiến binh này đã tồn tại – hãy dùng email khác để tạo hành trình mới.");
+        showToast("❌ Ninja này đã tồn tại – hãy dùng email khác để tạo hành trình mới.");
         return;
     }
     users.push({ username, email, password });
     localStorage.setItem("users", JSON.stringify(users));
-    showToast("✅ Chiến binh mới đã xuất hiện! Hành trình vinh quang đang chờ bạn phía trước.");
+    showToast("✅ Ninja mới đã xuất hiện! Hành trình vinh quang đang chờ bạn phía trước.");
     document.querySelector('.cont').classList.remove('s-signup');
 }
 function handleLogin() {
@@ -36,7 +36,7 @@ function handleLogin() {
     let users = JSON.parse(localStorage.getItem("users")) || [];
     const user = users.find(user => user.email === email);
     if (!user) {
-        showToast("❌ Không tìm thấy chiến binh – hãy đăng ký trước khi tham chiến.");
+        showToast("❌ Không tìm thấy Ninja – hãy đăng ký trước khi tham chiến.");
         setTimeout(() => {
             document.querySelector('.cont').classList.add('s-signup');  
         },500)
@@ -56,10 +56,10 @@ function handleLogin() {
     }
     if (user.password === password) {
         sessionStorage.setItem("currentUser", JSON.stringify(user));
-        showToast("✅ Đăng nhập thành công! Chiến binh " + user.username + " đã trở lại chiến trường!");
+        showToast("✅ Đăng nhập thành công! Ninja " + user.username + " đã trở lại chiến trường!");
         dangnhap();
         setTimeout(()=>{
-            window.location.href = "choingay.html";
+            window.location.href = "index.html";
         },2000)
     } else {
         showToast("❌ Sức mạnh không khớp – mật khẩu không chính xác.");
