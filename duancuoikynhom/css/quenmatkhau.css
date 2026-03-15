@@ -165,11 +165,11 @@ transition: transform 1.2s ease-in-out;
 }
 @keyframes changeBg {
 0%, 50% {
-background-image: url(../images/dangnhap15.jpg);
+background-image: url(../images/quenmatkhau1.jpg);
 
 }
 55%, 100% {
-background-image: url(../images/dangnhap12.jpg) ;
+background-image: url(../images/quenmatkhau2.jpg) ;
 
 }
 }

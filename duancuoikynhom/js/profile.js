@@ -52,9 +52,9 @@ if (!user) {
     // Chọn avatar theo cấp VIP
     const avatar = document.getElementById("avatar-nguoi-choi");
     if (capHienTai >= 0 && capHienTai <= 8) {
-        avatar.src = `../images/avt${capHienTai+1}.webp`;
+        avatar.src = `../images/avt${capHienTai+1}.png`;
     } else {
-        avatar.src = "../images/vip10.1.avif"; 
+        avatar.src = "../images/vip10.png";
     }
 
     capBacSpan.textContent = capHienTai >= vipMoc.length - 1 ? "👑 Huyền Thoại Ninja" : `VIP ${capHienTai}`;

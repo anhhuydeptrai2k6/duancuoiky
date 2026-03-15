@@ -221,8 +221,8 @@ function renderBangXepHang() {
     const vip = getVipLevel(u.zeni);
     const title = getTitle(vip);
     let avatarURL = vip >= 0 && vip <= 8
-        ? `../images/avt${vip + 1}.webp`
-        : "../images/vip10.1.avif";
+        ? `../images/avt${vip + 1}.png`
+        : "../images/vip10.png";
     let frameClass = vip >= 0 && vip <= 8
         ? `vip-frame-${vip}`
         : "legendary-frame";
