@@ -17,18 +17,18 @@ if (!currentSession) {
         html += `
         <div class="huy-hieu-card locked" id="card-rongvang">
             💎 Rồng Vàng<br/>
-            Nạp trên 100.000 Zeni<br/>
+            Nạp trên 100.000 Lượng<br/>
             <button onclick="nhanThuong('rongvang', 20000, 'gold')">Nhận thưởng</button>
         </div>`;
     } else if (user.thanhTich.includes("rongvang")) {
         html += `
         <div class="huy-hieu-card gold">
-            💎 Rồng Vàng<br/>Nạp trên 100.000 Zeni<br/>✅ Hoàn thành
+            💎 Rồng Vàng<br/>Nạp trên 100.000 Lượng<br/>✅ Hoàn thành
         </div>`;
     } else {
         html += `
         <div class="huy-hieu-card locked">
-            💎 Rồng Vàng<br/>Cần thêm ${(100000 - tongZeni).toLocaleString()} Zeni
+            💎 Rồng Vàng<br/>Cần thêm ${(100000 - tongZeni).toLocaleString()} Lượng
         </div>`;
     }
 

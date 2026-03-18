@@ -1,7 +1,7 @@
 if (!localStorage.getItem("demoDataLoaded")) {
     const demoUsers = [
     {
-    username: "👑 Dang Hai",
+    username: "👑 Huy Quang",
     email: "admin",
     password:"1",
     kimcuong:9999999,
@@ -24,7 +24,7 @@ if (!localStorage.getItem("demoDataLoaded")) {
     history: [{ zeni: 200000 }],
     },
     {
-    username: "Huy Quang",
+    username: "Dang Hai",
     email: "vip5@demo.cbrt",
     history: [{ zeni: 327500 }],
     },
