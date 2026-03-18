@@ -172,7 +172,7 @@ function nhanThuong(ma, soTien, cap) {
     showToast(`✅ Nhận ${soTien.toLocaleString()} Lượng từ thành tích!`);
     const card = document.getElementById("card-" + ma);
     card.classList.remove("locked");
-    card.classList.add(cap); 
+    card.classList.add(cap);
     card.innerHTML = getHuyHieuHTML(ma) + "<br/>✅ Hoàn thành";
 }
 
@@ -187,7 +187,7 @@ function getVipLevel(zeni) {
     if (zeni < 300000) return 7;
     if (zeni < 500000) return 8;
     if (zeni < 9999999) return 9;
-    return 10; 
+    return 10;
 }
 
 function getTitle(vip) {
