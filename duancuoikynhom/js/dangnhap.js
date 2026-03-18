@@ -59,7 +59,7 @@ function handleLogin() {
         showToast("✅ Đăng nhập thành công! Ninja " + user.username + " đã trở lại chiến trường!");
         dangnhap();
         setTimeout(()=>{
-            window.location.href = "index.html";
+            window.location.href = "../../index.html";
         },2000)
     } else {
         showToast("❌ Sức mạnh không khớp – mật khẩu không chính xác.");
