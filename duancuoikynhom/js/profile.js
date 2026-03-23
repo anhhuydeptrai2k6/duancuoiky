@@ -3,7 +3,7 @@ const nutDangNhap = document.getElementById("nut-dang-nhap");
 
 if (!user) {
     document.getElementById("ten-nguoi-choi").textContent = "Chưa đăng nhập";
-    document.getElementById("kc-hientai").textContent = "0";
+    document.getElementById("luong-hientai").textContent = "0";
     document.getElementById("cap-bac").textContent = "VIP 0";
     nutDangNhap.textContent = "Đăng nhập";
     nutDangNhap.onclick = () => {
@@ -13,12 +13,12 @@ if (!user) {
     const users = JSON.parse(localStorage.getItem("users")) || [];
     const userr = users.find(u => u.email === user.email);
     document.getElementById("ten-nguoi-choi").textContent = user.username;
-    document.getElementById("kc-hientai").textContent = userr.kimcuong || 0;
+    document.getElementById("luong-hientai").textContent = userr.luong || 0;
     nutDangNhap.textContent = "Đăng xuất";
     nutDangNhap.onclick = logout;
     userr.history = userr.history || [];
-    let tongZeniDaNap = userr.history.reduce((sum, log) => sum + log.zeni, 0)  ;
-    document.getElementById("cap-bac").textContent = getCapBac(tongZeniDaNap);
+    let tongLuongDaNap = userr.history.reduce((sum, log) => sum + log.luong, 0)  ;
+    document.getElementById("cap-bac").textContent = getCapBac(tongLuongDaNap);
     // Cập nhật thanh VIP
     const capBacSpan = document.getElementById("cap-bac");
     const vipNext = document.getElementById("vip-next");
@@ -26,7 +26,7 @@ if (!user) {
     const vipMoc = [0, 1000, 5000, 10000, 20000, 50000, 100000, 200000, 300000, 500000];
     let capHienTai = 0;
     for (let i = 0; i < vipMoc.length; i++) {
-        if (tongZeniDaNap >= vipMoc[i]) {
+        if (tongLuongDaNap >= vipMoc[i]) {
             capHienTai = i;
         } else {
             break;
@@ -67,9 +67,9 @@ if (!user) {
     if (capHienTai < vipMoc.length - 1) {
         const mucHienTai = vipMoc[capHienTai];
         const mucTiepTheo = vipMoc[capHienTai + 1];
-        const tienTrinh = ((tongZeniDaNap - mucHienTai) / (mucTiepTheo - mucHienTai)) * 100;
+        const tienTrinh = ((tongLuongDaNap - mucHienTai) / (mucTiepTheo - mucHienTai)) * 100;
         document.getElementById("vip-bar").style.width = tienTrinh + "%";
-        vipNext.textContent = `🔒 Bạn cần thêm ${(mucTiepTheo - tongZeniDaNap).toLocaleString()} Lượng để lên VIP ${capHienTai + 1}`;
+        vipNext.textContent = `🔒 Bạn cần thêm ${(mucTiepTheo - tongLuongDaNap).toLocaleString()} Lượng để lên VIP ${capHienTai + 1}`;
     } else {
         document.getElementById("vip-bar").style.width = "100%";
         document.getElementById("vip-bar").style.background = "line-gradient(to right,#b2ebf2,#00e5ff)";
@@ -84,7 +84,7 @@ if (!user) {
     return `
     <tr>
     <td>${thoiGian}</td>
-    <td>${log.zeni}</td>
+    <td>${log.luong}</td>
     <td>${log.vnd.toLocaleString()}</td>
     </tr>`;
     }).join('');
@@ -232,14 +232,14 @@ if (currentUser) {
 
         const users = JSON.parse(localStorage.getItem("users")) || [];
         const me = users.find(u => u.email === email);
-        me.kimcuong = (me.kimcuong || 0) + mocThuong[phut];
+        me.luong = (me.luong || 0) + mocThuong[phut];
         localStorage.setItem("users", JSON.stringify(users));
-        document.getElementById("kc-hientai").textContent = me.kimcuong;
+        document.getElementById("luong-hientai").textContent = me.luong;
 
         daHomNay.push(phut);
         daNhan[ngayHomNay] = daHomNay;
         localStorage.setItem(nhanKey, JSON.stringify(daNhan));
-        showToast(`✅ Bạn đã nhận ${mocThuong[phut].toLocaleString()} Zeni!`);
+        showToast(`✅ Bạn đã nhận ${mocThuong[phut].toLocaleString()} Lượng!`);
     }
 } else {
     document.getElementById("online-time").textContent = "Chưa đăng nhập";
@@ -288,14 +288,14 @@ function nhanThuongNV(id){
         }
     }
 
-    me.kimcuong = (me.kimcuong || 0) + phanThuong[id];
+    me.luong = (me.luong || 0) + phanThuong[id];
     localStorage.setItem("users", JSON.stringify(users));
 
-    document.getElementById("kc-hientai").textContent = me.kimcuong;
+    document.getElementById("luong-hientai").textContent = me.luong;
     data[ngay].push(id);
     localStorage.setItem(key, JSON.stringify(data));
 
-    showToast(`✅ Đã nhận ${phanThuong[id].toLocaleString()} Zeni!`);
+    showToast(`✅ Đã nhận ${phanThuong[id].toLocaleString()} Lượng!`);
     capNhatTienTrinhNV();
 }
 

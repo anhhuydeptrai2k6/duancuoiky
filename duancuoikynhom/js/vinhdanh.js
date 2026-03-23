@@ -6,14 +6,14 @@ if (!currentSession) {
 } else {
     const user = users.find(u => u.email === currentSession.email);
     user.history = user.history || [];
-    const tongZeni = user.history.reduce((sum, h) => sum + h.zeni, 0);
+    const tongLuong = user.history.reduce((sum, h) => sum + h.luong, 0);
     user.items = user.items || [];
     const items = user.items.length ;
     const soNgay = demSoNgayOnline(user.email);
     user.thanhTich = user.thanhTich || [];
     let html = "";
 
-    if (tongZeni >= 100000 && !user.thanhTich.includes("rongvang")) {
+    if (tongLuong >= 100000 && !user.thanhTich.includes("rongvang")) {
         html += `
         <div class="huy-hieu-card locked" id="card-rongvang">
             💎 Rồng Vàng<br/>
@@ -28,7 +28,7 @@ if (!currentSession) {
     } else {
         html += `
         <div class="huy-hieu-card locked">
-            💎 Rồng Vàng<br/>Cần thêm ${(100000 - tongZeni).toLocaleString()} Lượng
+            💎 Rồng Vàng<br/>Cần thêm ${(100000 - tongLuong).toLocaleString()} Lượng
         </div>`;
     }
 
@@ -74,7 +74,7 @@ if (!currentSession) {
         </div>`;
     }
 
-    if (tongZeni >= 500000 && !user.thanhTich.includes("vipmax")) {
+    if (tongLuong >= 500000 && !user.thanhTich.includes("vipmax")) {
         html += `
         <div class="huy-hieu-card locked" id="card-vipmax">
             Lục Đạo Gọi Tên<br/>
@@ -91,7 +91,7 @@ if (!currentSession) {
     } else {
         html += `
         <div class="huy-hieu-card locked">
-            Lục Đạo Gọi Tên<br/>Cần thêm ${(500000 - tongZeni).toLocaleString()} Lượng
+            Lục Đạo Gọi Tên<br/>Cần thêm ${(500000 - tongLuong).toLocaleString()} Lượng
         </div>`;
     }
 
@@ -166,7 +166,7 @@ function getHuyHieuHTML(ma) {
 function nhanThuong(ma, soTien, cap) {
     const user = users.find(u => u.email === currentSession.email);
     user.thanhTich = user.thanhTich || [];
-    user.kimcuong += soTien;
+    user.luong += soTien;
     user.thanhTich.push(ma);
     localStorage.setItem("users", JSON.stringify(users));
     showToast(`✅ Nhận ${soTien.toLocaleString()} Lượng từ thành tích!`);
@@ -176,17 +176,17 @@ function nhanThuong(ma, soTien, cap) {
     card.innerHTML = getHuyHieuHTML(ma) + "<br/>✅ Hoàn thành";
 }
 
-function getVipLevel(zeni) {
-    if (zeni < 1000) return 0;
-    if (zeni < 5000) return 1;
-    if (zeni < 10000) return 2;
-    if (zeni < 20000) return 3;
-    if (zeni < 50000) return 4;
-    if (zeni < 100000) return 5;
-    if (zeni < 200000) return 6;
-    if (zeni < 300000) return 7;
-    if (zeni < 500000) return 8;
-    if (zeni < 9999999) return 9;
+function getVipLevel(luong) {
+    if (luong < 1000) return 0;
+    if (luong < 5000) return 1;
+    if (luong < 10000) return 2;
+    if (luong < 20000) return 3;
+    if (luong < 50000) return 4;
+    if (luong < 100000) return 5;
+    if (luong < 200000) return 6;
+    if (luong < 300000) return 7;
+    if (luong < 500000) return 8;
+    if (luong < 9999999) return 9;
     return 10;
 }
 
@@ -212,13 +212,13 @@ function renderBangXepHang() {
     const tbody = document.querySelector("#top-users tbody");
 
     const sorted = users.map(u => {
-    const tongZeni = u.history?.reduce((sum, h) => sum + h.zeni, 0) || 0;
-    return { username: u.username, zeni: tongZeni };
-    }).sort((a, b) => b.zeni - a.zeni).slice(0, 10);
+    const tongLuong = u.history?.reduce((sum, h) => sum + h.luong, 0) || 0;
+    return { username: u.username, luong: tongLuong };
+    }).sort((a, b) => b.luong - a.luong).slice(0, 10);
 
     let html = "";
     sorted.forEach((u, i) => {
-    const vip = getVipLevel(u.zeni);
+    const vip = getVipLevel(u.luong);
     const title = getTitle(vip);
     let avatarURL = vip >= 0 && vip <= 8
         ? `../images/avt${vip + 1}.png`
@@ -242,7 +242,7 @@ function renderBangXepHang() {
             </tr>
             </table>
         </td>
-        <td>${u.zeni.toLocaleString()}</td>
+        <td>${u.luong.toLocaleString()}</td>
         <td>VIP ${vip}</td>
         <td>${title}</td>
         </tr>`;
@@ -262,20 +262,20 @@ function renderThanhTichAn() {
     }
 
     const user = users.find(u => u.email === currentSession.email);
-    const tongZeni = user.history?.reduce((sum, h) => sum + h.zeni, 0) || 0;
+    const tongLuong = user.history?.reduce((sum, h) => sum + h.luong, 0) || 0;
     const items = user.items?.length || 0;
     const soNgay = user.ngayDangNhap || 1;
     user.thanhTich = user.thanhTich || [];
     let html = "";
 
-    if (tongZeni < 200000) {
+    if (tongLuong < 200000) {
     html += `<div class="thanh-tich-card">
-        🔥 Cần nạp thêm ${(200000 - tongZeni).toLocaleString()} Zeni<br/>
+        🔥 Cần nạp thêm ${(200000 - tongLuong).toLocaleString()} Lượng<br/>
         để đạt cấp <b>Rồng Lửa</b>
     </div>`;
     } else {
         if (!user.thanhTich.includes("ronglua")) {
-            user.kimcuong += 50000;
+            user.luong += 50000;
             user.thanhTich.push("ronglua");
             localStorage.setItem("users", JSON.stringify(users));
             showToast("✅ Nhận 50.000 Lượng từ thành tích Rồng Lửa!");
@@ -289,7 +289,7 @@ function renderThanhTichAn() {
     </div>`;
     } else{
         if (!user.thanhTich.includes("collector")) {
-        user.kimcuong += 40000;
+        user.luong += 40000;
         user.thanhTich.push("collector");
         localStorage.setItem("users", JSON.stringify(users));
         showToast("✅ Nhận 40.000 Lượng từ thành tích Sưu Tầm Siêu Cấp!");
@@ -303,7 +303,7 @@ function renderThanhTichAn() {
     </div>`;
     } else {
         if (!user.thanhTich.includes("trungthanh")) {
-            user.kimcuong += 30000;
+            user.luong += 30000;
             user.thanhTich.push("trungthanh");
             localStorage.setItem("users", JSON.stringify(users));
             showToast("✅ Nhận 30.000 Lượng từ Chiến Binh Trung Thành!")

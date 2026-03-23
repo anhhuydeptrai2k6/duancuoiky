@@ -4,22 +4,22 @@ let users = JSON.parse(localStorage.getItem("users")) || [];
 const userr = users.find(u => u.email === user?.email);
 
 const tenUser = document.getElementById("ten-user");
-const zeniHienTai = document.getElementById("zeni-hientai");
+const luongHienTai = document.getElementById("luong-hientai");
 if (!user) {
     tenUser.textContent = "Chưa đăng nhập";
-    zeniHienTai.textContent = "0";
+    luongHienTai.textContent = "0";
     nutDangNhap.textContent = "Đăng nhập";
     nutDangNhap.onclick = () => {
         window.location.href = "dangnhap.html"; 
     };
 } else {
     tenUser.textContent = userr.username;
-    zeniHienTai.textContent = userr.kimcuong || 0;
-    let tongZeniDaNap = 0;
+    luongHienTai.textContent = userr.luong || 0;
+    let tongLuongDaNap = 0;
     userr.history?.forEach(log => {
-        tongZeniDaNap += log.zeni;
+        tongLuongDaNap += log.luong;
     });
-    document.getElementById("cap-bac").textContent = getCapBac(tongZeniDaNap);
+    document.getElementById("cap-bac").textContent = getCapBac(tongLuongDaNap);
     capNhatLichSu();
     nutDangNhap.textContent = "Đăng xuất";
     nutDangNhap.onclick = logout;
@@ -43,7 +43,7 @@ function muaVatPham(ma, gia) {
         showToast("⚠️ Bạn cần đăng nhập!");
         return;
     }
-    if ((userr.kimcuong || 0) < gia) {
+    if ((userr.luong || 0) < gia) {
         showToast("❌ Không đủ Lượng!");
         return;
     }
@@ -56,10 +56,10 @@ function muaVatPham(ma, gia) {
     const code = randomCode();
     const thoiGian = new Date().toLocaleString();
 
-    userr.kimcuong -= gia;
+    userr.luong -= gia;
     userr.items.push({ id: ma, code, gia, time: thoiGian });
     localStorage.setItem("users", JSON.stringify(users));
-    zeniHienTai.textContent = userr.kimcuong;
+    luongHienTai.textContent = userr.luong;
     showToast(`✅ Mua thành công! Code: ${code}`);
     capNhatLichSu();
 }
@@ -108,9 +108,9 @@ function getVipLevel(tong) {
     return 9;
 }
 
-function tinhTongZeniNap() {
+function tinhTongLuongNap() {
     let tong = 0;
-    userr.history?.forEach(log => tong += log.zeni);
+    userr.history?.forEach(log => tong += log.luong);
     return tong;
 }
 
@@ -119,7 +119,7 @@ function nhanQuaVip(ma, vipYeuCau) {
         showToast("⚠️ Bạn cần đăng nhập!");
         return;
     }
-    const tong = tinhTongZeniNap();
+    const tong = tinhTongLuongNap();
     const level = getVipLevel(tong);
     if (level < vipYeuCau) {
         showToast("❌ Chưa đủ cấp VIP để nhận gói quà này!");
@@ -145,14 +145,14 @@ function muaVipGift(ma, vipYeuCau, gia) {
         showToast("⚠️ Bạn cần đăng nhập!");
         return;
     }
-    const tong = tinhTongZeniNap();
+    const tong = tinhTongLuongNap();
     const level = getVipLevel(tong);
     if (level < vipYeuCau) {
         showToast("❌ Chưa đủ cấp VIP để mua gói này!");
         return;
     }
 
-    if ((userr.kimcuong || 0) < gia) {
+    if ((userr.luong || 0) < gia) {
         showToast("❌ Không đủ Lượng để mua!");
         return;
     }
@@ -165,11 +165,11 @@ function muaVipGift(ma, vipYeuCau, gia) {
     const code = randomCode();
     const thoiGian = new Date().toLocaleString();
 
-    userr.kimcuong -= gia;
+    userr.luong -= gia;
 
     userr.items.push({ id: ma, code, gia, time: thoiGian });
     localStorage.setItem("users", JSON.stringify(users));
-    zeniHienTai.textContent = userr.kimcuong;
+    luongHienTai.textContent = userr.luong;
     showToast("🎁 Mua gói VIP thành công!");
     capNhatLichSu();
 }

@@ -153,10 +153,6 @@ blockquote:hover {
   border-left-color: #1976d2;
   color:black;
 }
-.a1 {
-  text-decoration: none;
-  color:black;
-}
 iframe {
   border: 3px solid #202020;
   border-radius: 10px;
@@ -285,8 +281,7 @@ body.dark-mode .faq-section p:hover {
 }
 
 
-body.dark-mode a,
-body.dark-mode .a1 {
+body.dark-mode a {
   color: #ddd;
 }
 body.dark-mode footer {
@@ -366,20 +361,4 @@ body.dark-mode button:hover {
       background-size: 100px; 
     }
     
-}
-.music-toggle-btn {
-  position: fixed;
-  bottom: 20px;
-  left: 20px; 
-  z-index: 999;
-  background-color: #999;
-  border: none;
-  border-radius: 50%;
-  padding: 10px 14px !important;
-  font-size: 20px !important;
-  cursor: pointer;
-  box-shadow: 0 0 10px rgba(0,0,0,0.2);
-}
-.music-toggle-btn:hover {
-  background-color: #eee;
 }
